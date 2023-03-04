@@ -4,7 +4,7 @@ require_relative './node'
 require_relative './square'
 require_relative './board'
 
-# MoveManager Class acts as tree for nodes
+# MoveManager Class acts as tree for nodes/positions
 class MoveManager
   attr_reader :board
   def initialize(board = Board.new(8, 8))

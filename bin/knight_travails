@@ -1,2 +1,42 @@
-# frozen_string_literal: true
+#!/usr/bin/env ruby
 
+require_relative '../lib/knight'
+require_relative '../lib/node'
+require_relative '../lib/square'
+require 'json'
+
+
+# square = Square.new(3, 3)
+# initial_position = Node.new(square)
+
+# ending_square = Square.new(4, 3)
+# ending_position = Node.new(ending_square)
+
+# knight = Knight.new
+# knight.knight_moves(initial_position, ending_position)
+
+loop do
+  puts 'give a starting position in this format: [x, y]'
+  puts "Or to exit type 'exit'"
+  puts ""
+  
+  input = gets.chomp 
+  break if input == 'exit'
+  input = JSON.parse(input)
+  square = Square.new(input.first, input.last)
+  initial_position = Node.new(square)
+
+  puts 'give a ending position in this format: [x, y]'
+  puts "to exit type 'exit'"
+  puts ""
+
+  input = gets.chomp 
+  break if input == 'exit'
+  input = JSON.parse(input)
+  square = Square.new(input.first, input.last)
+  ending_position = Node.new(square)
+
+  knight = Knight.new
+  knight.knight_moves(initial_position, ending_position)
+  puts ""
+end
