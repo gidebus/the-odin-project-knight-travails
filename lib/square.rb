@@ -8,5 +8,8 @@ class Square
     @row = row
     @column = column
   end
-  
+
+  def coordinates
+    [self.row, self.column]
+  end
 end

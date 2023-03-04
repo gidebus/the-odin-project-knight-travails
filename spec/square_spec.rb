@@ -10,4 +10,11 @@ describe Square do
       expect(square.column).to eq(2)
     end
   end
+
+  describe '#coordinates' do
+    it 'returns its coordinates as an array' do
+      expected = [1, 2]
+      expect(square.coordinates).to eq(expected)
+    end
+  end
 end
