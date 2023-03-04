@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-# Board Class
 class Board
-
+  attr_reader :length, :height
+  def initialize(height, length)
+    @length = length
+    @height = height
+  end
 end
